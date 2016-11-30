@@ -16,4 +16,10 @@ class ArticlesController < ApplicationController
 		@article.save
 		redirect_to article_path(@article)
 	end
+	def destroy
+
+		@articleBin = Article.find(params[:id])
+		@articleBin.destroy
+		redirect_to articles_path
+	end
 end
