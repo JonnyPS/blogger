@@ -3,6 +3,6 @@ class TagsController < ApplicationController
 		@tag = Tag.find(params[:id])
 	end
 	def index
-		@tags = Tags.all
+		@tags = Tag.all
 	end
 end
