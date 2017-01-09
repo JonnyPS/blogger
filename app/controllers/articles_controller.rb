@@ -10,6 +10,27 @@ class ArticlesController < ApplicationController
 		@comment = Comment.new
 		@comment.article_id = @article.id
 	end
+	before_filter :require_login, only: [:new, :create, :destroy, :edit, :update]
+	def require_login
+		flash.notice = "You must be logged in to create a new article!"
+			# if not logged in
+			if Author.count == 0
+				flash.notice = "No users exist!"
+				redirect_to new_author_path
+				return false
+			elsif !current_user
+				redirect_to login_path
+				flash.notice = "You are NOT logged in!"
+				# redirect_to new_article_path
+
+				return false
+			# if you are logged in
+			else
+				flash.notice = "You ARE logged in!"
+				# redirect_to new_article_path
+
+			end
+	end
 	def new 
 		@article = Article.new
 	end
