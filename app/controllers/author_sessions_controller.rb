@@ -5,7 +5,9 @@ class AuthorSessionsController < ApplicationController
 		if login(params[:email], params[:password])
 			redirect_back_or_to(articles_path, notice: 'Logged in successfully.')
 		else
-			flash.now.alert = "Login failed."
+			flash.notice = "Login failed - One or more of your credentials is incorrect."
+
+			# flash.now.alert = "Login failed."
 			render action: :new
 		end
 	end
