@@ -7,19 +7,23 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-	<p class="flash"><%= flash.notice %></p>
-		<div id="container">
-			<div id="content">
-			<%= yield %>
-			<hr>
-				<h4>
-					<% if logged_in? %>
-						<%= "Logged in as #{current_user.email}" %>
-						<%= link_to "(logout)", logout_path %>
-					<% else %>
-						<%= link_to "(login)", login_path %>
-					<% end %>
-				</h4>
+		<div class="container">
+			<div class="row">
+				<p class="flash"><%= flash.notice %></p>
+					<div id="container">
+						<div id="content">
+						<%= yield %>
+						<hr class="col-lg-6">
+							<h4 class="col-lg-6">
+								<% if logged_in? %>
+									<%= "Logged in as #{current_user.email}" %>
+									<%= link_to "(logout)", logout_path %>
+								<% else %>
+									<%= link_to "(login)", login_path %>
+								<% end %>
+							</h4>
+						</div>
+					</div>
 			</div>
 		</div>
 	</body>
