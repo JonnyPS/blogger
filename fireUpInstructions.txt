@@ -1,0 +1,4 @@
+To start the rails app, do the following:
+
+1 - start the server, 'bin/rails s'
+2 - start gulp and browser-sync, 'browser-sync start --proxy localhost:3000 --files "app/assets/stylesheets/*.scss, app/views/*/*html.erb"'

@@ -1,7 +1,9 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.container {
+  background-color: #aeaeae;
+}
 a {
   text-decoration: none;
   color: orange;
@@ -17,6 +19,7 @@ a {
 }
 
 ul {
+  display: block;
   // font-size: 30px;
 }
 p {
