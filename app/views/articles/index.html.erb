@@ -1,15 +1,12 @@
-<!-- <div class="container">
-	<div class="row"> -->
-		<h1>All Articles</h1>
+<h1>All Articles</h1>
 
-		<ul class="articles" id="articles">
-			<% @articles.each do |article| %>
-				<li class="col-lg-12 col-md-12">
-					<%= link_to article.title, article_path(article), class: 'article_title' %>
-				</li>
-			<% end %>
-		</ul>
-<!-- 	</div>
-</div> -->
+<ul id="articles">
+	<% @articles.each do |article| %>
+		<li>
+			<%= link_to article.title, article_path(article), class: 'article_title' %>
+		</li>
+	<% end %>
+</ul>
+
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 <p><%= link_to "View all tags", tags_path %></p>
